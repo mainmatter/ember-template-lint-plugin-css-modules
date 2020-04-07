@@ -1,0 +1,8 @@
+{
+  "name": "ember-template-lint-plugin-css-modules",
+  "version": "0.0.0",
+  "description": "ember-template-lint plugin for ember-css-modules",
+  "repository": "github:simplabs/ember-template-lint-plugin-css-modules",
+  "license": "MIT",
+  "author": "Tobias Bieniek <tobias.bieniek@gmail.com>"
+}
