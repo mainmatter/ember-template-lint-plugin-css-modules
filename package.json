@@ -6,6 +6,10 @@
   "license": "MIT",
   "author": "Tobias Bieniek <tobias.bieniek@gmail.com>",
   "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --cache",
+    "test": "jest"
+  },
   "devDependencies": {
     "ember-template-lint": "^2.4.1",
     "eslint": "^6.8.0",
