@@ -23,5 +23,8 @@
   },
   "peerDependencies": {
     "ember-template-lint": "^2.4.1"
+  },
+  "engines": {
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
   }
 }
