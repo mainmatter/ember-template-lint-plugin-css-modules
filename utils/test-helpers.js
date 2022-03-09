@@ -1,18 +1,17 @@
 /* eslint-env jest */
 
-const _generateRuleTests = require('ember-template-lint/lib/helpers/rule-test-harness');
+import { generateRuleTests as _generateRuleTests } from 'ember-template-lint';
+import plugin from '../index.js';
 
-function generateRuleTests(options) {
+export function generateRuleTests(options) {
   return _generateRuleTests({
-    plugins: [require('../index')],
-
+    config: true,
     groupMethodBefore: beforeEach,
     groupingMethod: describe,
     testMethod: test,
     focusMethod: test.only,
+    plugins: [plugin],
 
     ...options,
   });
 }
-
-module.exports = { generateRuleTests };

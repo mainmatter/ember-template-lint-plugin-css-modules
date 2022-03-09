@@ -1,28 +1,30 @@
 {
   "name": "ember-template-lint-plugin-css-modules",
   "version": "0.1.1",
+  "type": "module",
   "description": "ember-template-lint plugin for ember-css-modules",
   "repository": "github:simplabs/ember-template-lint-plugin-css-modules",
   "license": "MIT",
   "author": "Tobias Bieniek <tobias.bieniek@gmail.com>",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint . --cache",
+    "lint": "eslint .",
     "release": "release-it",
-    "test": "jest"
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest"
   },
   "devDependencies": {
-    "ember-template-lint": "^2.4.1",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-prettier": "^3.1.2",
-    "jest": "^25.2.7",
-    "prettier": "2.0.4",
+    "cross-env": "^7.0.3",
+    "ember-template-lint": "^4.2.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.5.1",
+    "prettier": "^2.5.1",
     "release-it": "^14.12.5",
     "release-it-lerna-changelog": "^4.0.1"
   },
   "peerDependencies": {
-    "ember-template-lint": "^2.4.1"
+    "ember-template-lint": "^4.2.0"
   },
   "engines": {
     "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
