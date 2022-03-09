@@ -1,22 +1,22 @@
-const { Rule } = require('ember-template-lint');
+import { Rule } from 'ember-template-lint';
 
-class NoClassRule extends Rule {
+export function createErrorMessage(classNames) {
+  return `Found class="${classNames}". Use local-class attribute.`;
+}
+export default class NoClassRule extends Rule {
   visitor() {
     return {
       AttrNode(node) {
         if (node.name === 'class') {
           this.log({
-            message: NoClassRule.ERROR_MESSAGE(node.value.chars),
+            message: createErrorMessage(node.value.chars),
             line: node.loc && node.loc.start.line,
             column: node.loc && node.loc.start.column,
             source: this.sourceForNode(node),
+            node,
           });
         }
       },
     };
   }
 }
-
-NoClassRule.ERROR_MESSAGE = classNames => `Found class="${classNames}". Use local-class attribute.`;
-
-module.exports = NoClassRule;

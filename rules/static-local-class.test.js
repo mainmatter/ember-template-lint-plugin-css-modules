@@ -1,10 +1,8 @@
-const { generateRuleTests } = require('../utils/test-helpers');
-const Rule = require('./static-local-class');
+import { generateRuleTests } from '../utils/test-helpers.js';
+import { ERROR_MESSAGE } from './static-local-class.js';
 
 generateRuleTests({
   name: 'css-modules/static-local-class',
-
-  config: true,
 
   good: [
     `<div></div>`,
@@ -18,7 +16,7 @@ generateRuleTests({
     {
       template: '<div local-class={{@foo}}></div>',
       result: {
-        message: Rule.ERROR_MESSAGE,
+        message: ERROR_MESSAGE,
         line: 1,
         column: 17,
         source: '{{@foo}}',
@@ -27,7 +25,7 @@ generateRuleTests({
     {
       template: '<div local-class="foo {{@bar}}"></div>',
       result: {
-        message: Rule.ERROR_MESSAGE,
+        message: ERROR_MESSAGE,
         line: 1,
         column: 17,
         source: '"foo {{@bar}}"',
@@ -36,7 +34,7 @@ generateRuleTests({
     {
       template: '<div local-class={{if @foo @bar}}></div>',
       result: {
-        message: Rule.ERROR_MESSAGE,
+        message: ERROR_MESSAGE,
         line: 1,
         column: 17,
         source: '{{if @foo @bar}}',

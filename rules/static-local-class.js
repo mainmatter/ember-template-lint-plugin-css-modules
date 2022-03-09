@@ -1,5 +1,7 @@
-const { Rule } = require('ember-template-lint');
+import { Rule } from 'ember-template-lint';
 
+export const ERROR_MESSAGE =
+  '`local-class` attributes should only use static values or `if` conditions';
 /**
  * ember-css-modules allows us to use `local-class` attributes to refer to
  * CSS modules that are scoped to only the components. To achieve that CSS
@@ -17,7 +19,7 @@ const { Rule } = require('ember-template-lint');
  * This custom ember-template-lint rule checks that we only use static values
  * or if-conditions as values for the `local-class` attributes.
  */
-class StaticLocalClassRule extends Rule {
+export default class StaticLocalClassRule extends Rule {
   visitor() {
     return {
       AttrNode(node) {
@@ -38,10 +40,11 @@ class StaticLocalClassRule extends Rule {
 
   logForNode(node) {
     this.log({
-      message: StaticLocalClassRule.ERROR_MESSAGE,
+      message: ERROR_MESSAGE,
       line: node.loc && node.loc.start.line,
       column: node.loc && node.loc.start.column,
       source: this.sourceForNode(node),
+      node,
     });
   }
 
@@ -62,8 +65,3 @@ class StaticLocalClassRule extends Rule {
     return false;
   }
 }
-
-StaticLocalClassRule.ERROR_MESSAGE =
-  '`local-class` attributes should only use static values or if conditions';
-
-module.exports = StaticLocalClassRule;
