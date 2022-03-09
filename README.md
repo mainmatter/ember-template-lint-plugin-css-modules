@@ -1,22 +1,17 @@
-ember-template-lint-plugin-css-modules
-==============================================================================
+# ember-template-lint-plugin-css-modules
 
 [ember-template-lint] plugin for [ember-css-modules]
 
 [ember-template-lint]: https://github.com/ember-template-lint/ember-template-lint
 [ember-css-modules]: https://github.com/salsify/ember-css-modules
 
-
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 ```bash
-yarn add --dev ember-template-lint-plugin-css-modules
+npm install --save-dev ember-template-lint-plugin-css-modules
 ```
 
-
-Usage
-------------------------------------------------------------------------------
+## Usage
 
 ```js
 // .template-lintrc.js
@@ -30,17 +25,17 @@ module.exports = {
 };
 ```
 
-
-Rules
-------------------------------------------------------------------------------
+## Rules
 
 - [no-class](./rules/no-class.md) – Disallows usage of all `class` attributes
 - [static-local-class](./rules/static-local-class.md) – Disallows use of
   variable values in `local-class` attributes
 
+# Development
 
-License
-------------------------------------------------------------------------------
+- This plugin uses [pnpm](https://pnpm.js.org/) to manage its dependencies in development.
+
+## License
 
 This projects is developed by and &copy; [simplabs GmbH](http://simplabs.com)
 and contributors. It is released under the [MIT License](LICENSE.md).
